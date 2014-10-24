@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+                <style type='text/css'>
+                </style>
+                <link href="resources/css/main.css" rel="stylesheet" />
+                <link href="resources/css/bootstrap.css" rel="stylesheet" />
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" closable="true" collapsible="false">
+                    <h1>Web System Stock Control</h1>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="false">
+                    <h3>Programación Web</h3>
+                    <h4>Autores: Marcelo Martinez - Marcelo Franco</h4>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="220" header="Menú" collapsible="false">
+                    <p:menu>
+                        <p:submenu label="Clientes">
+                            <p:menuitem value="Alta" url="#" />
+                            <p:menuitem value="Listar" url="#" />
+                        </p:submenu>
+                        <p:submenu label="Proveedores">
+                            <p:menuitem value="Alta" url="#" />
+                            <p:menuitem value="Listar" url="#" />
+                        </p:submenu>
+                        <p:submenu label="Productos">
+                            <p:menuitem value="Alta" url="#" />
+                            <p:menuitem value="Listar" url="#" />
+                        </p:submenu>
+                        <p:submenu label="Movimientos">
+                            <p:menuitem value="Ventas" url="#" />
+                            <p:menuitem value="Compras" url="#" />
+                        </p:submenu>
+                        <p:submenu label="Otros">
+                            <p:menuitem value="Carga Masiva" url="#" />
+                            <p:menuitem value="Generar Facturas" url="#" />
+                        </p:submenu>
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <ui:insert name='content'>Welcome to PrimeFaces</ui:insert>
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+
+
