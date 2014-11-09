@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/WEB-INF/template/base.xhtml">
+        <ui:define name="content">
+            <f:view>
+                <h:form>
+                    <h1><h:outputText value="Usuarios"/></h1>
+                    <p:commandButton value="Exportar" icon="ui-icon-arrowthickstop-1-s" />
+                    <p:commandButton value="Nuevo" icon="ui-icon-plus" onclick="PF('nuevo').show();" actionListener='#{clienteNuevoBean.preparar}'/> <br /> <br />
+                    <p:dialog widgetVar="nuevo" header='Nuevo Cliente' showEffect="explode" hideEffect="explode">
+                        <h:form>
+                            <p:growl id="growl" showDetail="true" sticky="true" />
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="Nombre:" for="nombre" />
+                                <h:inputText id="nombre" value="#{clienteNuevoBean.nombre}" title="Nombre" required="true"/>
+                                <h:outputLabel value="Email:" for="email" />
+                                <h:inputText id="email" value="#{clienteNuevoBean.email}" title="Email" required="true"/>
+                                <h:outputLabel value="Ci:" for="ci" />
+                                <h:inputText id="ci" value="#{clienteNuevoBean.ci}" title="Ci" required="true"/>
+                            </h:panelGrid>
+                            <p:commandButton value="Guardar" icon="ui-icon-disk" onclick="PF('nuevo').hide();" actionListener='#{clienteNuevoBean.save}' update="growl" />
+                            <p:commandButton value="Cancelar" icon="ui-icon-close" onclick="PF('nuevo').hide();"/>
+                        </h:form>
+                    </p:dialog>
+                    <p:dataTable var="item" value="#{clienteBean.clientes}" rows="12" paginator="true" id="tbl"
+                                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                 rowsPerPageTemplate="6,12,16">
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Acciones"/>
+                            </f:facet>
+                            
+                            <p:commandButton value="Editar" actionListener="Nada" icon="ui-icon-pencil" />
+                            <p:commandButton value="Eliminar" actionListener="Nada" icon="ui-icon-close" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Nombre"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombre}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Email"/>
+                            </f:facet>
+                            <h:outputText value="#{item.email}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Ci"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ci}"/>
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+            </f:view>
+
+        </ui:define>
+    </ui:composition>
+</html>

@@ -13,7 +13,10 @@
                 <style type='text/css'>
                 </style>
                 <link href="resources/css/main.css" rel="stylesheet" />
-                <link href="resources/css/bootstrap.css" rel="stylesheet" />
+                <link href="resources/jquery/jquery-ui.theme.min.css" rel="stylesheet" />
+                <link href="resources/jquery/jquery-ui.structure.min.css" rel="stylesheet" />
+                <link href="resources/jquery/jquery-ui.min.css" rel="stylesheet" />
+                <link href="resources/css/bootstrap.min.css" rel="stylesheet" />
             </f:facet>
         </h:head>
 
@@ -32,17 +35,10 @@
 
                 <p:layoutUnit position="west" size="220" header="Menú" collapsible="false">
                     <p:menu>
-                        <p:submenu label="Clientes">
-                            <p:menuitem value="Alta" url="#" />
-                            <p:menuitem value="Listar" url="#" />
-                        </p:submenu>
-                        <p:submenu label="Proveedores">
-                            <p:menuitem value="Alta" url="#" />
-                            <p:menuitem value="Listar" url="#" />
-                        </p:submenu>
-                        <p:submenu label="Productos">
-                            <p:menuitem value="Alta" url="#" />
-                            <p:menuitem value="Listar" url="#" />
+                        <p:submenu label="ABM">
+                            <p:menuitem value="Clientes" url="ABMclientes.xhtml" />
+                            <p:menuitem value="Proveedores" url="ABMproveedores.xthml" />
+                            <p:menuitem value="Productos" url="ABMproductos.xthml" />
                         </p:submenu>
                         <p:submenu label="Movimientos">
                             <p:menuitem value="Ventas" url="#" />

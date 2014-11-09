@@ -59,9 +59,6 @@ public class ClientesFacadeREST {
     @GET
     @Produces({"application/xml", "application/json"})
     public List<Clientes> findAll() {
-        System.out.printf("*************************************************************");
-        System.out.printf("Entro en el REST");
-        System.out.printf("*************************************************************");
         return cliente.findAll();
     }
 
